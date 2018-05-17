@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+
+</script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bucket List</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link href="css/bucket_list.css" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Bucket List Page', 'view', sessionStorage.getItem('userID'));
+    </script>
+
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+  </head>
+
+
+  <body>
+
+    <section id="empty-page">
+      <p>No Item in Bucket List</p>
+    </section>
+
+    <section id="first-page">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+
+          <div class="col-md-4" id="country-list">
+          </div>
+
+          <div class="col-md-4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div id="country-name">
+
+    </div>
+
+
+    <div class="container" id="bucket-list-country">
+      <div class="row">
+        <div class="col-md-4 no-float no-padding">
+          <div id="map"></div>
+        </div>
+
+        <div class="col-md-8 no-padding">
+          <div id="picture-cards">
+           <ul id="picture-cards-list"></ul>
+           <span class="glyphicon glyphicon-chevron-left" id="picture-cards-prev"></span>
+           <span class="glyphicon glyphicon-chevron-right" id="picture-cards-next"></span>
+          </div>
+          <div id="blog-cards">
+           <ul id="blog-cards-list"></ul>
+           <span class="glyphicon glyphicon-chevron-left" id="blog-cards-prev"></span>
+           <span class="glyphicon glyphicon-chevron-right" id="blog-cards-next"></span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+
+   <!--div class="container">
+     <div class="row">
+
+       <div class="col-md-12">
+         <div id="picture-cards">
+          <ul id="picture-cards-list"></ul>
+         </div>
+       </div>
+
+
+     </div>
+   </div-->
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Backend -->
+    <script src="js/backend.js"></script>
+    <!-- Sly -->
+    <script src="js/sly.js"></script>
+
+    <script src="js/bucket_list.js"></script>
+
+  </body>
+</html>

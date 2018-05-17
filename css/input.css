@@ -1,0 +1,64 @@
+/* Secondary Color #f27f22 */
+
+.input-group {
+	position: relative;
+	width: 100%;
+	padding-top: 10px;
+}
+
+.input-group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.input-group input {
+	border: none;
+	border-bottom: solid 1px #ccc;
+	width: 100%;
+	padding: 10px 0;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+	background-color: rgba(0,0,0,0);
+}
+
+.input-group input:focus {
+	outline: none;
+	border-color: #f27f22;
+	box-shadow: 0 1px 0 0 #f27f22;
+}
+
+.input-group label {
+	position: absolute;
+	top: 30px;
+	left: 0;
+	color: #aaa;
+	font-weight: 300;
+	transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.input-group label:hover {
+	cursor: text;
+}
+
+.input-group input:focus + label {
+	color: #E53935;
+}
+
+.input-group input:focus + label,
+.input-group input.active + label {
+	transform: translateY(-30px);
+}
+
+
+button {
+	/*color: #f27f22;*/
+	font-color: #000000;
+	font-style: bold;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	border-radius: 2px;
+	padding: 10px 20px;
+	text-transform: uppercase;
+	transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}

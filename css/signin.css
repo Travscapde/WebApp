@@ -1,0 +1,298 @@
+/* Primary color #2c92d0 */
+/* Secondary Color #f27f22 */
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	overflow: hidden;
+	background: url("../images/signin-bg3.jpg");
+	background-size: cover;
+}
+
+
+nav.navbar.navbar-inverse {
+    min-height: 100px;
+    padding-top: 25px;
+    /*opacity: 0.8;*/
+    background: rgba(34,34,34,0.8);
+    z-index: 5;
+}
+
+.navbar-brand {
+    padding: 0px;
+}
+
+.navbar-brand>img {
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: auto;
+}
+
+
+#site_brand_text {
+	 font-family: 'Josefin Sans';
+   margin-left: -15px;
+    display: inline-block;
+    padding-top: 10px;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    color: #2c92d0;
+}
+
+
+
+/*#bg {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 100%;
+}*/
+
+
+#overlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.4);
+	z-index: 2;
+}
+
+#intro {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+
+
+#login {
+	position: absolute;
+	top: 50%;
+	right:10%;
+  transform: translate(0, -50%);
+	background: rgba(0,0,0,0.6);
+	z-index: 5;
+	text-align: center;
+  padding: 0em 2em 2em 2em;
+}
+
+#register {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.9);
+  z-index: 11;
+  text-align: center;
+  padding: 5em 2em 7em 2em;
+}
+
+
+.small {
+  font-size: 0.8em !important;
+}
+
+
+#email-input-group {
+  margin-bottom: 1em;
+}
+
+#name-input-group {
+  width: 25em;
+  margin-bottom: 1em;
+}
+
+
+#email-input {
+  color: #FFFFFF;
+}
+
+#password-input {
+  color: #FFFFFF;
+}
+
+#name-input {
+  color: #FFFFFF;
+}
+
+#password-confirm-input {
+  color: #FFFFFF;
+}
+
+#login-button {
+  /*color: #f27f22;*/
+  float: right;
+  color: #FFFFFF;
+  font-color: #FFFFFF;
+  font-style: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}
+
+#register-button {
+  /*color: #f27f22;*/
+  float: left;
+  color: #FFFFFF;
+  font-color: #FFFFFF;
+  font-style: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}
+
+#register-confirm-button {
+  /*color: #f27f22;*/
+  float: right;
+  color: #FFFFFF;
+  font-color: #FFFFFF;
+  font-style: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}
+
+#register-cancel-button {
+  float: left;
+  color: #FFFFFF;
+  font-color: #FFFFFF;
+  font-style: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}
+
+
+#credit {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: 0.8em;
+  z-index: 5;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    background-position: right;
+  }
+
+  #intro {
+    display: none;
+  }
+
+  #login {
+    width: 100%;
+    margin-top: 2.5em;
+    right: 0;
+  }
+
+  #register {
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+  }
+
+
+}
+
+#login>p {
+	margin: 1em 2em 2em;
+	color: #DDDDDD;
+  font-family: 'Titillium Web', sans-serif;
+	font-size: 1.6em;
+}
+
+
+/* Shared */
+.loginBtn {
+ 	 box-sizing: border-box;
+  	position: relative;
+ 	 /* width: 13em;  - apply for fixed size */
+ 	 margin: 0.2em;
+ 	 padding: 0 15px 0 46px;
+ 	 border: none;
+  	text-align: left;
+  	line-height: 34px;
+  	white-space: nowrap;
+ 	 border-radius: 0.2em;
+ 	 font-size: 16px;
+ 	 color: #FFF;
+}
+.loginBtn:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 100%;
+}
+.loginBtn:focus {
+  outline: none;
+}
+.loginBtn:active {
+  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
+}
+
+
+/* Facebook */
+.loginBtn--facebook {
+  margin-bottom: 1em;
+  background-color: #4C69BA;
+  background-image: linear-gradient(#4C69BA, #3B55A0);
+  /*font-family: "Helvetica neue", Helvetica Neue, Helvetica, Arial, sans-serif;*/
+  text-shadow: 0 -1px 0 #354C8C;
+}
+.loginBtn--facebook:before {
+  border-right: #364e92 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_facebook.png') 6px 6px no-repeat;
+}
+.loginBtn--facebook:hover,
+.loginBtn--facebook:focus {
+  background-color: #5B7BD5;
+  background-image: linear-gradient(#5B7BD5, #4864B1);
+}
+
+
+/* Google */
+.loginBtn--google {
+  margin-bottom: 2em;
+
+
+  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
+  background: #DD4B39;
+}
+.loginBtn--google:before {
+  border-right: #BB3F30 1px solid;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
+}
+.loginBtn--google:hover,
+.loginBtn--google:focus {
+  background: #E74B37;
+}

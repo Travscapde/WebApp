@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Upload Picture</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/travscapade_styles.css" rel="stylesheet">
+
+    <!-- Slim Cropper -->
+    <link rel="stylesheet" href="css/slim.css" />
+
+    <!-- Loader -->
+    <link href="css/loader.css" rel="stylesheet">
+
+    <!-- Interest Select Modal -->
+    <link href="css/modal-interest-select.css" rel="stylesheet">
+
+
+    <link href="css/input.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600|Roboto:300,400,700" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="css/add_picture.css">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="Travscapade" src="images/travscapade-logo-optim.svg" id="site_brand" class="clip-square">
+                </a>
+                <p alt="Travscapade" id="site_brand_text"><b>TRAV</b><span class="glyphicon glyphicon-map-marker"
+                                                                           aria-hidden="true"></span><span>SCAPADE</span>
+                </p>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+
+                <li>
+                    <a><span id="search-button" class="glyphicon glyphicon-search"></span></a>
+                </li>
+
+                <li>
+                    <a>
+                        <input id="autocomplete" type="text"></input>
+                        <span id="button-close-search" class="close">&times;</span>
+                    </a>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span
+                            class="glyphicon glyphicon-user"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/bucket_list.html">Bucket List</a></li>
+                        <li><a href="/user_pictures.html">Photos</a></li>
+                        <li><a id="button-user-interests">Interests</a></li>
+                        <li><a id="button-logout">Logout</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+</head>
+
+
+<body>
+
+<section id="loading-screen">
+    <div class="loader"></div>
+</section>
+
+<section>
+    <div id="select-interest-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="button-close-modal" class="close">&times;</span>
+            <div class="select-interest-heading"> Please select an interest.</div>
+            <div id="interest-list">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--<section id="picture">-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-md-4">-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+                <!--<div id="myCropper">-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="col-md-4">-->
+            <!--</div>-->
+
+        <!--</div>-->
+    <!--</div>-->
+<!--</section>-->
+
+
+<section id="info">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div id="myCropper" class="upload_picture_box">
+
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="input-group">
+                    <input type="text" id="heading" class="m-input center-block">
+                    <label for="heading">Enter a Title</label>
+                </div>
+
+                <!-- ID of the immediate input box changed from autocomplete to location for mockup -->
+                <!-- class:bottom-margin disabled in travscapade_styles.css -->
+                <div class="input-group bottom-margin" id="location-input">
+                    <input type="text" id="location" class="m-input center-block" placeholder="">
+                    <label for="autocomplete">Location</label>
+                </div>
+
+                <div class="input-group" id="interest-input">
+                    <input type="text" id="button-select-interest" class="m-input center-block">
+                    <label for="button-select-interest">Enter 1 Interest</label>
+                </div>
+
+                <div class="input-group" id="description-input-group">
+                    <input type="text" id="description" class="m-input center-block">
+                    <label for="description">Enter a Short Descrtion</label>
+                </div>
+
+
+                <!--form>
+                  <input id="heading" type="text" name="title"><br>
+                  <input id="description" type="text" name="description"><br>
+                  <input id="submit-button" type="submit" value="Upload">
+                </form>
+                </select><br-->
+
+                <!--input id="autocomplete" type="text"></input><br>
+                Interest:<br>
+                <select id="interest-list">
+                </select><br-->
+
+                <div class="form-group top-margin">
+                    <button type="submit" class="btn btn-primary form-control" id="submit-button">Upload</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">&copy;&nbsp;Travscapade</p>
+    </div>
+</footer>
+
+
+<!--button id="button-upload" type="button">Upload</button-->
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Slim Cropper -->
+<script src="js/slim.kickstart.js"></script>
+<!-- Amazon AWS -->
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+<!-- Google Place -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI1IKGx1lrpkAszfQZQ-NNpyt9Fi0CBNs&libraries=places"></script>
+<!-- Backend -->
+<script src="js/backend.js"></script>
+
+<script src="js/interest-selection.js"></script>
+<script src="js/add_picture.js"></script>
+
+</body>
+</html>

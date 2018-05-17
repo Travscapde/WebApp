@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Disable zoom in mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <title>Sign In</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Input -->
+    <link href="css/input.css" rel="stylesheet">
+
+
+    <link href="css/signin.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Signin Page', 'view');
+    </script>
+
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+</head>
+
+
+<body>
+
+    <!--img id="bg" src="images/signin-bg.jpg" /-->
+
+    <div id="overlay">
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <img alt="Travscapade" src="images/logo.png" id="site_brand" class="clip-square">
+                </a>
+                <p alt="Travscapade" id="site_brand_text">Travscapade</span></p>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="intro">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cn10Vc9Wo80?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+
+    <div id="login">
+        <p>Sign in to discover<br/>awe-inspiring destinations!</p>
+        <button id="fb-login-button" class="loginBtn loginBtn--facebook">
+             Login with Facebook
+        </button>
+        <br/>
+
+        <button id="g-login-btn" class="loginBtn loginBtn--google">
+            Login with Google
+        </button>
+
+        <p class="small">By signing in you are agreeing to our <a target="_blank" href="/T&C.htm">Terms and Conditions</a></p>
+
+        <div class="input-group" id="email-input-group">
+          <input type="email" id="email-input" class="m-input center-block">
+          <label for="email-input">Email</label>
+        </div>
+        <div class="input-group" id="password-input-group">
+          <input type="password" id="password-input" class="m-input center-block">
+          <label for="password-input">Password</label>
+        </div>
+        <button id="login-button">Sign In</button>
+        <button id="register-button">Register</button>
+
+
+        <!--div class="g-signin2" data-onsuccess="onSignIn"><i class="fa fa-google-plus-official" aria-hidden="true"></i>&nbsp&nbspSign In</div-->
+   </div>
+
+
+    <div id="register">
+      <div class="input-group" id="name-input-group">
+        <input type="text" id="name-input" class="m-input center-block">
+        <label for="name-input">Name</label>
+      </div>
+      <div class="input-group" id="password-confirm-input-group">
+        <input type="password" id="password-confirm-input" class="m-input center-block">
+        <label for="password-confirm-input">Confirm Password</label>
+      </div>
+      <button id="register-confirm-button">Register</button>
+      <button id="register-cancel-button">Cancel</button>
+    </div>
+
+
+   <!--div id="credit">
+        <p>Photo Credit <a target="_blank" href="https://www.instagram.com/khurumfilmmaker/?hl=en">khurumfilmmaker</a></p>
+   </div-->
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!--script src="https://apis.google.com/js/platform.js" async defer></script-->
+    <script src="https://apis.google.com/js/api:client.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/signin_script.js"></script>
+</body>
+
+</html>

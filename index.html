@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+
+</script>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Disable zoom in mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>Travscapade</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- SAI RDK style sheets -->
+    <link href="css/travscapade_styles.css" rel="stylesheet">
+
+    <!-- FAB -->
+    <link href="css/kc.fab.css" rel="stylesheet">
+
+    <!--Modal -->
+    <link href="css/modal-interest-select.css" rel="stylesheet">
+
+    <!-- Country Select -->
+    <link href="css/countrySelect.css" rel="stylesheet">
+
+    <!-- OnBoarding -->
+    <link href="css/modal-hint.css" rel="stylesheet">
+
+    <!-- Fullscreen -->
+    <link href="css/fullscreen.css" rel="stylesheet">
+
+    <link href="css/modal-location-info.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Roboto:300,400,700" rel="stylesheet" />
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header pull-left">
+                <a class="navbar-brand" href="#">
+                    <img alt="Travscapade" src="images/logo.png" id="site_brand" class="clip-square">
+                </a>
+                <p alt="Travscapade" id="site_brand_text">Travscapade</p>
+            </div>
+            <!--div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <img alt="Travscapade" src="images/travscapade-logo-optim.svg" id="site_brand" class="clip-square">
+                </a>
+                <p alt="Travscapade" id="site_brand_text"><b>TRAV</b><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><span>SCAPADE</span></p>
+            </div-->
+
+            <div class="navbar-header pull-right">
+              <ul class="nav navbar-nav">
+
+                  <li>
+                    <a><span id="search-button" class="glyphicon glyphicon-search"></span></a>
+                  </li>
+
+                  <li>
+                    <a id="search-box">
+                      <input id="autocomplete" class="search-input" type="search"></input>
+                      <span id="button-close-search" class="close">&times;</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown">
+                      <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span id="user-button" class="glyphicon glyphicon-user"></span></a>
+                      <ul class="dropdown-menu">
+                          <li><a href="/profile.html?user=self">Profile</a></li>
+                          <li><a href="/bucket_list.html">Bucket List</a></li>
+                          <li><a id="button-user-interests">Interests</a></li>
+                          <li><a id="button-logout">Logout</a></li>
+                      </ul>
+                  </li>
+
+              </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/kc.fab.js"></script>
+    <script src="js/countrySelect.js"></script>
+    <script src="js/interest-selection.js"></script>
+    <script src="js/backend.js"></script>
+    <script src="js/trav_script.js"></script>
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI1IKGx1lrpkAszfQZQ-NNpyt9Fi0CBNs&libraries=places&callback=initMap" defer></script>
+
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Home Page', 'view', sessionStorage.getItem('userID'));
+    </script>
+
+</head>
+
+<body>
+
+
+   <section>
+    <div id="fullscreen-modal">
+      <span id="button-close-fullscreen" class="close">&times;</span>
+      <div id="fullscreen-content" class="center-block">
+        <div id="fullscreen-image-div"><img id="fullscreen-image" /></div>
+      </div>
+    </div>
+   </section>
+
+
+   <section>
+     <div id="select-interest-modal">
+       <div id="interest-modal-content">
+         <span id="button-close-modal">&times;</span>
+         <div class="select-interest-heading"> My Interests</div>
+         <div id="interest-list">
+          <div class="button-container">
+            <button id="interest-select-done">DONE</button>
+          </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+
+
+
+    <section>
+      <div id="location-info-modal">
+
+        <!-- Modal content -->
+        <div id="location-info-content">
+          <span id="button-close-location">&times;</span>
+          <div id="map"></div>
+          <div id="location-info">
+            <p id="location-info-name"></p>
+            <p id="location-info-summary"></p>
+            <p id="location-info-link"><a id="link" target="_blank">Read More</a></p>
+          </div>
+          <p>Best Time to go:</p>
+          <div id="score-bar"></div>;
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="country-select-modal">
+        <span id="button-close-country-select">&times;</span>
+        <div id="country-bg" class="text-center">
+          <div class="select-nationality-heading">Select Your Nationality</div>
+          <input type="text" id="country">
+          <button id="country-select-button">OK</button>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div id="search-empty">
+        <p>No results found. We are continuously adding new contents - so check back in a few days!</p>
+      </div>
+    </section>
+
+    <section>
+      <div id="overlay-hint">
+
+      </div>
+    </section>
+
+    <section>
+      <div id="location-request-modal">
+        <div id="location-request-content" class="center-block">
+          <p>For a personalized feed, allow Travscapade to access your location.</p>
+          <button id="location-request-ok">OK</button>
+          <button id="location-request-cancel">NOT NOW</button>
+        </div>
+      </div>
+    </section>
+
+
+
+    <div class="container" id="update">
+        <!-- Testing Travscapade with Witcher Geralt -->
+        <!-- <div class="row">
+          <div class="col-md-12 text-center travscapade">
+            <div class="user-content" id="image-box">
+              <img src="images/witcher.png"/ class="travimage">
+              <div class="location-text">
+                <p>
+                  Novigrad, Temeria
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-center">
+                <button class="glyphicon glyphicon-heart" aria-hidden="true" id="heart" value="1"></button>
+                <button class="glyphicon glyphicon-plus" aria-hidden="true" id="plus" value="2"></button><br />
+              </p>
+            </div>
+
+            <div id="details">
+              <span id="travel-type">Witchering</span>
+              <span id="user-photo">Name</span>
+              <span><img src="images/geralt.jpg"/></span>
+            </div>
+          </div>
+        </div> -->
+    </div>
+
+    <div class="loader"></div>
+
+    <div class="kc_fab_wrapper" ></div>
+
+    <!-- Footer -->
+    <footer class="footer-override">
+        <div class="container">
+            <div class="col-md-12 col-xs-12">
+                <p class="copyright-text">
+                    &copy Travscapade
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

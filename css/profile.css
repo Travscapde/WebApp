@@ -1,0 +1,104 @@
+#user-info {
+	width: 50%;
+	padding: 2em 2em 2em 2em;
+}
+
+#name-pic {
+	float: left;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+}
+
+#profile-pic-div {
+	
+}
+
+#profile-pic {
+	width: 10em;
+	height: 10em;
+}
+
+#name {
+	font-size: 1.2em;
+	font-weight: 700;
+	margin-top: 1em;
+	margin-bottom: 3em;
+}
+
+
+#stats {
+	width: 50%;
+	float: left;
+	font-size: 1.2em;
+}
+
+#stats > p {
+	width: 100%;
+	text-align: center;
+}
+
+#tabs-container {
+
+
+}
+
+#photo-cards {
+	width: 100%;
+}
+
+#blog-cards {
+	width: 100%;
+}
+
+#photo-cards img {
+	width:50%;
+	padding: 2px 2px;
+	float: left;
+	background: #DDDDDD;
+}
+
+
+#blog-cards>div {
+	position: relative;
+	float: left;
+	width:50%;
+	padding: 2px 2px;
+}
+
+
+#blog-cards img {
+	width: 100%;
+}
+
+#blog-cards>div>.blog-title {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+
+#blog-cards>div>.blog-title>p{
+  color: #FFFFFF;
+  font-size: 1.5em;
+  font-family: 'Titillium Web', sans-serif; 
+  text-align: center;
+}
+
+
+
+/* Mobile */
+@media only screen and (max-device-width: 480px) {
+	#user-info {
+		width: 100%;
+		padding: 2em 2em 2em 2em;
+	}
+
+	#profile-pic {
+		width: 5em;
+		height: 5em;
+	}
+
+}

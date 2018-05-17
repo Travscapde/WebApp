@@ -1,0 +1,101 @@
+/* Secondary Color #f27f22 */
+
+
+body {
+	font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+#url-input-group {
+	margin-top: 80px;
+}
+
+
+
+#preview-button {
+	float: right;
+}
+
+
+#preview {
+	display: none;
+}
+
+#title {
+	width: 100%;
+	margin-top: 20px;
+	text-align: center;
+	font-size: 1.375em;
+	font-weight: 600;
+}
+
+#extract {
+	width:100%;
+	margin-top: 10px;
+	font-size: 1em;
+}
+
+#extract-modify {
+	width: 100%;
+	text-align: right;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#extract-input-group {
+	margin-top: 20px;
+	display: none;
+}
+
+#extract-custom {
+}
+
+
+#thumbnail-container {
+	position: relative;
+}
+
+#thumbnail {
+	width:100%;
+	margin-top: 10px;
+}
+
+#thumbnail-next {
+	position: absolute;
+  	font-size: 1.5em;
+  	opacity: 0.8;
+	color: #f27f22;
+	right: 0px;
+	top:50%;
+	cursor: pointer;
+}
+
+#thumbnail-prev {
+	position: absolute;
+  	font-size: 1.5em;
+  	opacity: 0.8;
+	color: #f27f22;
+	left: 0px;
+	top:50%;
+	cursor: pointer;
+}
+
+
+
+
+#location-input {
+	display:none;
+	margin-top: 20px;
+}
+
+
+#interest-input {
+	display: none;
+	margin-top: 20px;
+}
+
+#upload-button {
+	display: none;
+	float: right;
+}

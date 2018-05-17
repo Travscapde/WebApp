@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+
+</script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Disable zoom in mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>Upload Blog</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Interest Select Modal -->
+    <link href="css/modal-interest-select.css" rel="stylesheet">
+    <!-- Loader -->
+    <link href="css/loader.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link href="css/input.css" rel="stylesheet">
+    <link href="css/add_blog.css" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Add Blog Page', 'view', sessionStorage.getItem('userID'));
+    </script>
+
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+  </head>
+
+
+  <body>
+
+    <section id="loading-screen">
+      <div class="loader"></div>
+    </section>
+
+
+   <section>
+     <div id="select-interest-modal">
+       <div id="interest-modal-content">
+          <span id="button-close-modal">&times;</span>
+          <div class="select-interest-heading"> Select Upto 3 interests.</div>
+          <div id="interest-list">
+          <div class="button-container">
+            <button id="interest-select-done">DONE</button>
+          </div>
+         </div>
+       </div>
+     </div>
+   </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+
+          <div class="col-md-4" id="middle-col">
+            <div id="preview">
+            	<div id="title"></div>
+            	<div id="thumbnail-container">
+                <img id="thumbnail"></img>
+                <span class="glyphicon glyphicon-chevron-left" id="thumbnail-prev"></span>
+                <span class="glyphicon glyphicon-chevron-right" id="thumbnail-next"></span>
+              </div>
+              <div id="extract"></div>
+              <p id="extract-modify">Modify</p>
+              <div class="input-group" id="extract-input-group">
+                <input id="extract-custom" type="text" class="m-input center-block"></input>
+                <label for="extract-custom">Enter Extract</label>
+              </div>
+            </div>
+
+            <div class="input-group" id="url-input-group">
+              <input type="text" id="blog-url" class="m-input center-block">
+              <label for="blog-url">Enter Blog URL</label>
+              <button id="preview-button">Preview</button><br>
+            </div>
+
+            <div class="input-group" id="location-input">
+              <input type="text" id="autocomplete" class="m-input center-block" placeholder="">
+              <label for="autocomplete">Location</label>
+            </div>
+            <!--div id="location-input" style="display:none;">
+            	Location:<br>
+            	<input id="autocomplete" type="text"></input><br>
+            </div-->
+
+            <div class="input-group" id="interest-input">
+              <input type="text" id="button-select-interest" class="m-input center-block">
+              <label for="button-select-interest">Enter Upto 3 Interests</label>
+            </div>
+            <!--div id="interest-input" style="display:none;">
+            	Interest:<br>
+            	<input type='text' id="button-select-interest" ></button>
+            </div-->
+
+            <button id="upload-button">Upload</button>
+          </div>
+
+          <div class="col-md-4">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+	<!--button id="button-upload" type="button">Upload</button-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Google Place -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI1IKGx1lrpkAszfQZQ-NNpyt9Fi0CBNs&libraries=places"></script>
+    <!-- Backend -->
+    <script src="js/backend.js"></script>
+    <!-- Interest Select -->
+    <script src="js/interest-selection.js"></script>
+
+    <script src="js/add_blog.js"></script>
+
+  </body>
+</html>

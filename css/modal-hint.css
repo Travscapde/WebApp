@@ -1,0 +1,25 @@
+#overlay-hint {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+}
+
+
+.hint {
+	position: fixed;
+	z-index: 11;
+	text-align: center;
+	font-size: 1.3em;
+	color: #F44336;
+}
+
+.elevated {
+	position: relative;
+	z-index: 11;
+	color: #F44336;
+}

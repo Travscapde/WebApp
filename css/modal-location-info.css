@@ -1,0 +1,108 @@
+#location-info-modal {
+	display: none;
+    position: fixed; 
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+
+#button-close-location {
+	position: fixed;
+    top: 0.5em;
+    right: 1em;
+    font-size: 3em;
+    color: #FFFFFF;
+}
+
+
+#location-info-content {
+	width: 50%;
+	height: 100%;
+	font-size: 1.2em;
+	margin: auto auto;
+}
+
+
+#button-close-location:hover {
+	cursor: pointer;
+    color:888888;
+}
+
+#map {
+	width: 100%;
+	height: 50%;
+}
+
+#location-info {
+	background: #FFFFFF; 
+	padding: 1em 1em;
+}
+
+#location-info-name {
+	font-weight: 700;
+}
+
+#location-info-link {
+	width: 100%;
+	text-align: right;
+}
+
+#location-info-link>a {
+	cursor: pointer;
+}
+
+#location-info-content>p {
+	background: #FFFFFF;
+	color: #000000;
+	padding: 0em 1em;
+	margin: 0em;
+}
+
+
+#score-bar {
+	position: relative;
+	height: 2em;
+	background: #FFFFFF; 
+}
+
+#score-bar>p{
+	padding: 0em 1em;	
+}
+
+.score-bar-overlay {
+	position: absolute;
+	left: 0em;
+	top: 0em;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.3);
+	z-index: 5;
+}
+
+.mon-name {
+	position: absolute;
+	width: 100%;
+	color: #FFFFFF;
+	text-align: center;
+	z-index: 6;
+}
+
+
+/* Mobile */
+@media only screen and (max-device-width: 480px) {
+
+	#location-info-content {
+  		width: 100%;
+		margin-top: 1em;
+		margin-bottom: 1em;
+		font-size: 1.2em;
+		margin: auto auto;
+	}
+
+
+}

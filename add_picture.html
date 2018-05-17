@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+
+</script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Disable zoom in mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="HandheldFriendly" content="true" />
+
+    <title>Upload Picture</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Slim Cropper -->
+    <link rel="stylesheet" href="css/slim.css" />
+
+     <!-- Loader -->
+    <link href="css/loader.css" rel="stylesheet">
+
+    <!-- Interest Select Modal -->
+    <link href="css/modal-interest-select.css" rel="stylesheet">
+
+
+    <link href="css/input.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link rel="stylesheet" href="css/add_picture.css">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Add Picture Page', 'view', sessionStorage.getItem('userID'));
+    </script>
+
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+  </head>
+
+
+  <body>
+
+    <section id="loading-screen">
+      <div class="loader"></div>
+    </section>
+
+
+
+    <section>
+      <div id="select-interest-modal">
+        <div id="interest-modal-content">
+          <span id="button-close-modal">&times;</span>
+          <div class="select-interest-heading">Select an interest.</div>
+          <div id="interest-list">
+          <div class="button-container">
+            <button id="interest-select-done">DONE</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="picture">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+
+          <div class="col-md-4">
+            <div id="myCropper">
+            </div>
+          </div>
+
+          <div class="col-md-4">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section id="info">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+
+          <div class="col-md-4" id="middle-col">
+            <!--div class="input-group" id="title-input-group">
+              <input type="text" id="heading" class="m-input center-block">
+              <label for="heading">Enter a Title</label>
+            </div-->
+
+            <div class="input-group" id="location-input">
+              <input type="text" id="autocomplete" class="m-input center-block" placeholder="">
+              <label for="autocomplete">*Location</label>
+            </div>
+
+            <div class="input-group" id="interest-input">
+              <input type="text" id="button-select-interest" class="m-input center-block">
+              <label for="button-select-interest">*Interest</label>
+            </div>
+
+            <div class="input-group" id="description-input-group">
+              <input type="text" id="description" class="m-input center-block">
+              <label for="description">Addition Info</label>
+            </div>
+
+
+            <!--form>
+              <input id="heading" type="text" name="title"><br>
+              <input id="description" type="text" name="description"><br>
+              <input id="submit-button" type="submit" value="Upload">
+            </form>
+            </select><br-->
+
+             <!--input id="autocomplete" type="text"></input><br>
+             Interest:<br>
+             <select id="interest-list">
+             </select><br-->
+
+            <button id="submit-button">Upload</button>
+          </div>
+
+          <div class="col-md-4">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+	<!--button id="button-upload" type="button">Upload</button-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Slim Cropper -->
+    <script src="js/slim.kickstart.js"></script>
+    <!-- Amazon AWS -->
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.20.min.js"></script>
+    <!-- Google Place -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI1IKGx1lrpkAszfQZQ-NNpyt9Fi0CBNs&libraries=places"></script>
+    <!-- Backend -->
+    <script src="js/backend.js"></script>
+
+    <script src="js/interest-selection.js"></script>
+    <script src="js/add_picture.js"></script>
+
+  </body>
+</html>

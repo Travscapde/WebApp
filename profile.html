@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+
+</script>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+    <link href="css/profile.css" rel="stylesheet">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-102030897-2', 'auto');
+      ga('send', 'pageview');
+      ga('send', 'event', 'Profile Page', 'view', sessionStorage.getItem('userID'));
+    </script>
+
+    <script
+      src="js/bugsnag-3.min.js"
+      data-apikey="ed872df25a1255371b770ce7d0d49e76"></script>
+
+  </head>
+
+
+  <body>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="user-info" class="center-block">
+              <div id="name-pic">
+                <div id="profile-pic-div"><img id="profile-pic" class="img-circle"/></div>
+                <div id="name"></div>
+              </div>
+              <div id="stats">
+                <p id="number-photo"></p>
+                <p id="number-blog"></p>
+                <p id="number-likes"></p>
+                <p id="number-bl"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+          </div>
+          <div class="col-md-6">
+            <div id="tabs-container">
+              <div id="tab-headers">
+                <ul class="nav nav-tabs">
+                  <li role="presentation" class="active"><a href="#photo-cards" id="photos-link" aria-controls="photo-cards" role="tab" data-toggle="tab">Photos</a></li>
+                  <li role="presentation"><a href="#blog-cards" id="blogs-link" aria-controls="blog-cards" role="tab" data-toggle="tab">Blogs</a></li>
+                </ul>
+              </div>
+              <div id="cards" class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="photo-cards"></div>
+                <div role="tabpanel" class="tab-pane" id="blog-cards"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!--button id="button-upload" type="button">Upload</button-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Backend -->
+    <script src="js/backend.js"></script>
+
+    <script src="js/profile.js"></script>
+
+  </body>
+</html>

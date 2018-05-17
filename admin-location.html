@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--script type="text/javascript">
+    if (sessionStorage.getItem("isLogged") != "true") {
+        window.location = "/signin.html";
+    }
+</script-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Location Update</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600" rel="stylesheet" />
+
+    
+  </head>
+  
+
+  <body>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+          </div>
+          
+          <div class="col-md-4" id="middle-col">
+            <div id="location-info">
+              <p id="location-info-name"></p>
+              <p id="location-info-summary"></p>
+              <a id="location-info-link"></a>
+            </div>
+
+            <div>
+              <br/><br/>
+              Override Summary: <br/>
+              <textarea  id="summary-override" rows="5" cols="40"></textarea>
+              <br/>Override Link: <br/>
+              <input id="link-override" type="text">
+              <br/>
+              <button id="override">Override</button>
+            </div>
+
+          </div>
+
+          <div class="col-md-4">
+            <button id="next">Next</button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Backend -->
+    <script src="js/backend.js"></script>    
+    
+    <script src="js/admin-location.js"></script>    
+
+  </body>
+</html>

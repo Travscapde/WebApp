@@ -1,0 +1,185 @@
+/* Primary color #2c92d0 */
+/* Secondary Color #f27f22 */
+
+
+#select-interest-modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.8);
+}
+
+#interest-modal-content {
+    width: 50em;
+    margin: 4em auto;
+}
+
+.select-interest-heading {
+    position: fixed;
+    top: 0px;
+    margin: 0px auto;
+    width: 50em;
+    height: 4em;
+    padding: 1em 2em;
+    font-family:'Titillium Web', sans-serif;
+    font-size: 1em;
+    font-weight: 700;
+    background-color: rgba(234, 234, 234, 1);
+    z-index: 20;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0px;
+  margin: 0px auto;
+  width: 50em;
+  height: 4em;
+  padding: 1em 2em;
+  font-family:'Titillium Web', sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  background-color: rgba(234, 234, 234, 1);
+  z-index: 20;
+}
+
+#interest-select-done {
+  float: right;
+  color: #2c92d0;
+  font-color: #2c92d0;
+  font-style: bold;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border-radius: 2px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease, background-color 0.2s ease-in-out;
+}
+
+
+#interest-list {
+    background-color: rgba(245, 245, 245, 1);
+    padding-bottom: 3em;
+}
+
+
+#interest-list>button {
+    font-size: 1.2em;
+    font-weight: 700;
+    float: right;
+}
+
+.interest-item {
+    position: relative;
+    display:inline-block;
+    width: 100%;
+    padding: 1em 2em;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.interest-item:hover {
+     background-color: rgba(234, 234, 234, 1)
+}
+
+.interest-item span {
+}
+
+
+/* The Close Button */
+#button-close-modal {
+  display: none;
+  position: fixed;
+  top: 0.5em;
+  right: 1em;
+  font-size: 3em;
+  color: #FFFFFF;
+}
+
+#button-close-modal:hover,
+#button-close-modal:focus {
+    color:888888;
+    cursor: pointer;
+}
+
+
+
+/* Checkboxes */
+
+input[type='checkbox']{
+  display:none;
+}
+
+
+
+input[type='checkbox'] + label{
+  z-index:15;
+  position:absolute;
+  left:2em;
+  top:1em;
+  -webkit-transition: all .3s ease;
+          transition: all .3s ease;
+  cursor:pointer;
+  width:20px;
+  border: 4px solid #444;
+  height:20px;
+}
+
+.tag {
+  margin-left:40px;
+}
+
+input[type='checkbox']:checked + label{
+
+  -webkit-transition: all .3s ease;
+
+          transition: all .3s ease;
+  display:inline-block;
+  width:20px;
+  height:20px;
+  border-top-color:transparent;
+  border-right-color:transparent;
+  border-bottom-color:#2c92d0;
+  border-left-color:transparent;
+transform:rotate(-50deg) translate(5px,-9px);
+}
+
+input[type='checkbox']:checked + label:before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  bottom: -3px;
+  height: 10px;
+  width: 100%;
+  border-left:4px solid #2c92d0;
+}
+
+
+/* Mobile */
+@media only screen and (max-device-width: 480px) {
+
+  #interest-modal-content {
+      width: 100%;
+      margin: 0px 0px;
+      background-color: rgba(0, 0, 0, 0);
+  }
+
+  .select-interest-heading {
+    width: 100%;
+  }
+
+  .button-container {
+    width: 100%;
+  }
+
+  #button-close-modal {
+    display: none;
+  }
+
+}

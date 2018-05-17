@@ -1,0 +1,38 @@
+#fullscreen-modal {
+    display: none;
+    position: fixed; 
+    z-index: 10; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+#button-close-fullscreen {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    font-size: 3em;
+    color: #FFFFFF;
+}
+
+#button-close-fullscreen:hover {
+    color:888888;
+}
+
+
+#fullscreen-content {
+    width: 40%;
+    margin: auto auto;
+}
+
+#fullscreen-image-div {
+    width: 100%;
+}
+
+#fullscreen-image {
+    width: 100%;
+}
+
